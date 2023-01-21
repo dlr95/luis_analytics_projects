@@ -1,3 +1,5 @@
+--This query counts the number of apartments listed by Idealista in customized price ranges
+
 select 
 	sum(case when price >0 and price <=150 then 1 else 0 end) as '0-150',
 	sum(case when price >150 and price <=300 then 1 else 0 end) as '150-300',
