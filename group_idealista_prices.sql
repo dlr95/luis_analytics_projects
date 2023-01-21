@@ -7,3 +7,5 @@ select
 	sum(case when price >450 and price <=600 then 1 else 0 end) as '450-600',
 	sum(case when price >600 and price <=750 then 1 else 0 end) as '600-750'
 from Idealista_Data
+
+--Source data can be found in https://www.kaggle.com/datasets/laurabarreda/idealista-madrid-rental-real-state
