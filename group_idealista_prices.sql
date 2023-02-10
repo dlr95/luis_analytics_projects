@@ -1,11 +1,13 @@
 --This query counts the number of apartments listed by Idealista in customized price ranges
 
 select 
-	sum(case when price >0 and price <=150 then 1 else 0 end) as '0-150',
-	sum(case when price >150 and price <=300 then 1 else 0 end) as '150-300',
-	sum(case when price >300 and price <=450 then 1 else 0 end) as '300-450',
-	sum(case when price >450 and price <=600 then 1 else 0 end) as '450-600',
-	sum(case when price >600 and price <=750 then 1 else 0 end) as '600-750'
-from Idealista_Data
+	sum(case when precio >0 and precio <500 then 1 else 0 end) as '0-499',
+	sum(case when precio >=500 and precio <1000 then 1 else 0 end) as '500-999',
+	sum(case when precio >=1000 and precio <1500 then 1 else 0 end) as '1000-1499',
+	sum(case when precio >=1500 and precio <2000 then 1 else 0 end) as '1500-1999',
+	sum(case when precio >=2000 and precio <2500 then 1 else 0 end) as '2000-2499',
+	sum(case when precio >=2500 then 1 else 0 end) as '>=2500'
+from rent_spain_scraping_dataset rssd 
 
---Source data can be found in https://www.kaggle.com/datasets/laurabarreda/idealista-madrid-rental-real-state
+
+--Source data can be found in https://www.kaggle.com/datasets/laurabarreda/rental-listins-in-idealista-spain
